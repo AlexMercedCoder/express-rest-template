@@ -1,11 +1,17 @@
 //ENVIRONMENT VARIABLES FROM env.yaml
 const yenv = require('yenv')
 const env = yenv('env.yaml', { env: process.env.NODE_ENV })
-const {PORT=process.env.PORT, SECRET} = env
+process.env = {...process.env, ...env}
+const {PORT, SECRET, NODE_ENV} = process.env
+console.log(PORT)
+
+//CORTS
+const cors = require('cors')
+const corsOptions = require('./configs/cors.js')
 
 //AUTH
 const jwt = require('jsonwebtoken')
-const {auth} = require('./auth.js')
+const {auth} = require('./configs/auth.js')
 
 //Bringing in Express
 const express = require('express')
@@ -19,6 +25,7 @@ const morgan = require('morgan')
 ////////////
 //MIDDLEWARE
 ////////////
+NODE_ENV === 'production' ? app.use(cors(corsOptions)) : app.use(cors())
 app.use(express.static('public'))
 app.use(express.json())
 app.use(morgan('tiny')) //logging
