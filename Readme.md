@@ -18,4 +18,10 @@ production:
 
 - cors whitelist defined in config/cors.js, when in a non-production environment it will allow all traffic, in production it will work off the whitelist.
 
+## Commands
+
+```npm run dev``` run dev server look for env.yaml for environmental variables
+
+```npm run start``` run in production more, not look for env.yaml
+
 MAKE SURE TO JOIN THE SLACK AND DISCORD COMMUNITIES AT DEVNURSERY.COM
