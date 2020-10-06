@@ -14,7 +14,6 @@
     "cors": "^2.8.5",
     "cross-env": "^7.0.2",
     "express": "^4.17.1",
-    "express-session": "^1.17.1",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "yenv": "^2.1.1"

@@ -22,7 +22,6 @@ const express = require("express");
 const app = express();
 
 //OTHER IMPORTS
-const session = require("express-session");
 const morgan = require("morgan");
 
 ////////////
